@@ -1,0 +1,204 @@
+// Navigation and content loading functionality
+document.addEventListener("DOMContentLoaded", () => {
+  // Load content for each section
+  loadSectionContent()
+
+  // Handle navigation
+  setupNavigation()
+
+  // Initialize skill bars animation
+  initializeSkillBars()
+})
+
+// 语言配置
+const translations = {
+    en: {
+        profile: 'Profile',
+        education: 'Education',
+        skills: 'Skills',
+        research: 'Research',
+        evaluation: 'Self-Evaluation',
+        langButton: '中文'
+    },
+    zh: {
+        profile: '个人简介',
+        education: '教育背景',
+        skills: '技能特长',
+        research: '研究经历',
+        evaluation: '自我评价',
+        langButton: 'English'
+    }
+};
+
+let currentLang = 'en';
+
+// 语言切换功能
+document.getElementById('langToggle').addEventListener('click', function() {
+    currentLang = currentLang === 'en' ? 'zh' : 'en';
+    updateLanguage();
+});
+
+// 更新页面语言
+function updateLanguage() {
+    const t = translations[currentLang];
+    
+    // 更新导航链接文本
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const section = link.getAttribute('href').substring(1);
+        if (t[section]) {
+            link.textContent = t[section];
+        }
+    });
+
+    // 更新语言切换按钮文本
+    document.getElementById('langToggle').textContent = t.langButton;
+
+    // 更新标题
+    document.title = currentLang === 'en' ? 
+        'Personal Resume - [Your Name]' : 
+        '个人简历 - [您的姓名]';
+
+    // 载入当前显示的内容
+    loadContent(getCurrentSection());
+}
+
+// 获取当前显示的部分
+function getCurrentSection() {
+    return document.querySelector('.section.active').id;
+}
+
+// 内容加载功能
+function loadContent(section) {
+    const contentDiv = document.getElementById(`${section}-content`);
+    const lang = currentLang;
+    
+    // 根据当前语言加载对应的 HTML 文件
+    fetch(`${section}${lang === 'zh' ? '_zh' : ''}.html`)
+        .then(response => response.text())
+        .then(html => {
+            contentDiv.innerHTML = html;
+        })
+        .catch(error => {
+            console.error('Error loading content:', error);
+        });
+}
+
+async function loadSectionContent() {
+  const sections = [
+    { id: "profile", file: "profile.html" },
+    { id: "education", file: "education.html" },
+    { id: "skills", file: "skills.html" },
+    { id: "research", file: "research.html" },
+    { id: "evaluation", file: "evaluation.html" },
+  ]
+
+  for (const section of sections) {
+    try {
+      const response = await fetch(section.file)
+      const content = await response.text()
+      const contentDiv = document.getElementById(`${section.id}-content`)
+      if (contentDiv) {
+        contentDiv.innerHTML = content
+      }
+    } catch (error) {
+      console.error(`Error loading ${section.file}:`, error)
+      // Fallback content
+      const contentDiv = document.getElementById(`${section.id}-content`)
+      if (contentDiv) {
+        contentDiv.innerHTML = `<p>Content for ${section.id} section will be loaded here.</p>`
+      }
+    }
+  }
+}
+
+function setupNavigation() {
+  const navLinks = document.querySelectorAll(".nav-link")
+  const sections = document.querySelectorAll(".section")
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault()
+
+      // Remove active class from all links and sections
+      navLinks.forEach((l) => l.classList.remove("active"))
+      sections.forEach((s) => s.classList.remove("active"))
+
+      // Add active class to clicked link
+      this.classList.add("active")
+
+      // Show corresponding section
+      const targetId = this.getAttribute("href").substring(1)
+      const targetSection = document.getElementById(targetId)
+      if (targetSection) {
+        targetSection.classList.add("active")
+
+        // Re-initialize skill bars if skills section is shown
+        if (targetId === "skills") {
+          setTimeout(initializeSkillBars, 100)
+        }
+      }
+    })
+  })
+}
+
+function initializeSkillBars() {
+  const skillBars = document.querySelectorAll(".skill-progress")
+
+  skillBars.forEach((bar) => {
+    const width = bar.style.width
+    bar.style.width = "0%"
+
+    setTimeout(() => {
+      bar.style.width = width
+    }, 200)
+  })
+}
+
+// Smooth scrolling for better UX
+function smoothScroll(target) {
+  const element = document.getElementById(target)
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    })
+  }
+}
+
+// Add some interactive features
+document.addEventListener("DOMContentLoaded", () => {
+  // Add hover effects to skill items
+  const skillItems = document.querySelectorAll(".skill-item")
+  skillItems.forEach((item) => {
+    item.addEventListener("mouseenter", function () {
+      this.style.transform = "translateX(5px)"
+      this.style.transition = "transform 0.3s ease"
+    })
+
+    item.addEventListener("mouseleave", function () {
+      this.style.transform = "translateX(0)"
+    })
+  })
+
+  // Add click effects to contact items
+  const contactItems = document.querySelectorAll(".contact-item")
+  contactItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      const text = this.querySelector("span").textContent
+      if (text.includes("@")) {
+        window.location.href = `mailto:${text}`
+      } else if (text.includes("linkedin")) {
+        window.open(`https://${text}`, "_blank")
+      } else if (text.includes("github")) {
+        window.open(`https://${text}`, "_blank")
+      }
+    })
+
+    item.style.cursor = "pointer"
+  })
+})
+
+// 初始化时加载内容
+document.addEventListener('DOMContentLoaded', function() {
+    loadContent('profile');
+});

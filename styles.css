@@ -1042,3 +1042,10 @@ img {
     font-size: 2rem;
   }
 }
+
+.journal-name {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}

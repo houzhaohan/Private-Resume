@@ -187,11 +187,11 @@ body {
 }
 
 .profile-pic {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  width: 183px;
+  height: 266px;
+  border-radius: 0;
   object-fit: cover;
-  border: 5px solid #3498db;
+  border: 5px solid #000000;
 }
 
 .profile-info h1 {

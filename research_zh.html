@@ -1,30 +1,33 @@
 <div class="research-container">
     <h2 class="section-title">
         <i class="fas fa-flask"></i>
-        研究经历
+        Research Experience
     </h2>
 
     <div class="research-timeline">
         <div class="research-item">
-            <div class="research-date">2025.6 - 今</div>
+            <div class="research-date">2025.6 - present</div>
             <div class="research-content">
-                <h3>基于哈希算法的CLIP预训练模型在农田昆虫图像跨模态检索与定位的研究与应用</h3>
-                <h4>南京农业大学 高性能计算中心</h4>
-                <p class="research-role">毕业设计</p>
-                <p class="research-supervisor">导师：朱毅华(副教授)</p>
+                <h3>Research and Application of CLIP Pre-training Model Based on Hash Algorithm in Cross-modal Retrieval and Localization of Farmland Insect Images</h3>
+                <h4>Nanjing Agricultural University High Performance Computing Center</h4>
+                <p class="research-role">Capstone Project</p>
+                <p class="research-supervisor">Supervisor: Yihua Zhu (Associate Professor)</p>
                 <p class="research-description">
-                    旨在对大量农田昆虫图像检索并依据图像检索结果对农田昆虫定位。定位结果可以用来实施精准农业，例如定点喷药、调节生物链。系统使用CLIP视觉语言模型与深度哈希算法，通过微调预训练模型提取多模态特征，并设计分层哈希编码机制将高维特征映射为紧凑二进制哈希码。项目构建包含2万张农田作物图像的多模态数据集，实现可以使用GPU加速的最近邻搜索算法，支持以文搜图多模态检索方式。系统采用C/S架构开发，后端基于PyTorch实现特征提取和索引管理模块，前端提供可视化交互界面，在保证检索速度的同时，尽量调高准确率和召回率。本系统为农田昆虫监测等场景提供了高效的图像检索解决方案。
+                    This project develops an intelligent retrieval and localization visualization system for agricultural insect images, using B/S architecture, including frontend interactive interface, backend processing module, and data storage layer. The frontend supports functions such as user registration, login, image upload, and retrieval; The backend is based on the Flask framework, integrating CLIP model for image and text feature extraction, and introducing Hash algorithm to improve retrieval efficiency and system scalability. The data layer uses binary Hash index to store features, greatly improving retrieval speed.
+                    The system supports cross modal retrieval based on natural language description, and users can input text such as "snail" and "snail at leaves" to query target insect images. By combining the image data obtained from the camera network deployed in farmland, the system can retrieve insect images in the field and quickly locate and visualize the insect situation based on location information. The search results can be presented as scatter plots and heat maps, helping agricultural technicians accurately grasp the location and density of pest infestations.
+                    This system supports early warning and targeted control of pests in precision agriculture, which can significantly reduce pesticide use, reduce environmental pollution, and improve prevention and control efficiency. The system also has model fine-tuning and incremental learning functions, supporting continuous optimization of retrieval performance. Historical data can be used to analyze the spatiotemporal dynamics of insect infestation, providing a basis for planting plans and control strategies, and promoting the development of smart plant protection and green agriculture.
                 </p>
                 <div class="research-highlights">
-                    <h5>关键成果：</h5>
+                    <h5>Key Achievements:</h5>
                     <ul>
-                        <li>使用B/S架构开发信息系统</li>
+                        <li>Developing information systems using B/S architecture</li>
+                        <li>Fine-tuning the CLIP model</li>
                     </ul>
                 </div>
                 <div class="research-tags">
-                    <span class="research-tag">微调CLIP预训练模型</span>
-                    <span class="research-tag">图像检索</span>
-                    <span class="research-tag">信息系统开发与设计</span>
+                    <span class="research-tag">Fine Tune CLIP Pre-training Model</span>
+                    <span class="research-tag">Image Retrieval</span>
+                    <span class="research-tag">Information System Development and Design</span>
                 </div>
             </div>
         </div>
@@ -32,22 +35,22 @@
         <div class="research-item">
             <div class="research-date">2025.5 - 2025.8</div>
             <div class="research-content">
-                <h3>基于BiLSTM-Attention模型的马丁策略在量化交易市场的分析</h3>
-                <h4>香港科技大学</h4>
-                <p class="research-supervisor">导师：易柯(教授)</p>
+                <h3>Analysis of Martingale Strategy in Quantitative Trading Market Based on BiLSTM-Attention Model</h3>
+                <h4>Hong Kong University of Science and Technology</h4>
+                <p class="research-supervisor">Supervisor: Ke Yi (Professor)</p>
                 <p class="research-description">
-                    本研究提出了一种基于BiLSTM-Attention模型的优化型马丁策略，旨在解决传统马丁策略在极端市场条件下适应性不足的问题。研究构建了一个能够捕捉股票价格长期时间依赖关系的预测模型，并在此基础上设计了一个多维动态管理机制。该机制整合了RSI、MACD等技术指标、波动率调整模块以及滑动窗口止盈止损策略，实现了对风险的自适应控制。
+                    This study proposes an improved Martingale Strategy based on the BiLSTM-Attention model, aimed at addressing the problem of insufficient adaptability of traditional Martingale Strategy under extreme market conditions. We have developed a predictive model that can capture the long-term temporal dependence of stock prices and designed a multidimensional dynamic management mechanism based on it. This mechanism integrates technical indicators such as RSI and MACD, volatility adjustment modules, and sliding window profit and loss strategies to achieve adaptive risk control.
                 </p>
                 <div class="research-highlights">
-                    <h5>关键成果：</h5>
+                    <h5>Key Achievements:</h5>
                     <ul>
-                        <li>验证了深度学习（BiLSTM-Attention）与传统交易策略（马丁策略）协同优化的可行性</li>
-                        <li>为低频量化交易提供了一种可扩展的技术框架，适用于个人投资者或轻量级金融产品开发</li>
-                        <li>发表了一篇EI会议论文[1-3]</li>
-                        <li>项目代码仓库
+                        <li>Verified the feasibility of collaborative optimization between Deep Learning (BiLSTM-Attention) and traditional trading strategies (Martingale Strategy)</li>
+                        <li>Provided a scalable technical framework for low-frequency quantitative trading, suitable for individual investors or lightweight financial product development</li>
+                        <li>Published an EI Compendex paper [1-3]</li>
+                        <li>Project code repository
                             <a href="https://github.com/houzhaohan/Analysis-of-Martingale-Strategy-in-Quantitative-Trading-Market-Based-on-BiLSTM-Attention-Model" 
                             target="_blank" 
-                            title="查看代码"
+                            title="view code"
                             style="color: #0066cc; text-decoration: none; border-bottom: 1px dashed #0066cc;">
                             https://github.com/houzhaohan/Analysis-of-Martingale-Strategy-in-Quantitative-Trading-Market-Based-on-BiLSTM-Attention-Model
                             </a>
@@ -56,8 +59,8 @@
                 </div>
                 <div class="research-tags">
                     <span class="research-tag">BiLSTM-Attention</span>
-                    <span class="research-tag">马丁策略</span>
-                    <span class="research-tag">量化交易</span>
+                    <span class="research-tag">Martingale Strategy</span>
+                    <span class="research-tag">Quantitative Trading</span>
                 </div>
             </div>
         </div>
@@ -65,26 +68,27 @@
         <div class="research-item">
             <div class="research-date">2023.11 - 2025.6</div>
             <div class="research-content">
-                <h3>个体行为与社会文化集成视角下人工智能素养的影响因素模型研究</h3>
-                <h4>南京农业大学</h4>
-                <p class="research-role">大学生创新训练项目</p>
-                <p class="research-supervisor">导师：韩正彪(教授)</p>
+                <h3>Research on the Influencing Factors Model of Artificial Intelligence Literacy from the Perspective of Individual Behavior and Social Culture Integration</h3>
+                <h4>Nanjing Agriculture University</h4>
+                <p class="research-role">Student Research Training Programme for Undergraduates</p>
+                <p class="research-supervisor">Supervisor: Zhengbiao Han (Professor)</p>
                 <p class="research-description">
-                    通过结构方程模型与多维度量表，实证检验了数字鸿沟、认知吸收和计算思维对人工智能素养的整合影响机制，揭示了计算思维的核心作用及技术普及中的潜在风险。
+                    This project integrates multiple statistical techniques, including factor analysis and path analysis, through multidimensional scales and structural equation modeling, enabling the simultaneous handling of relationships between latent and observed variables. In the study, "artificial intelligence literacy," "digital divide," "cognitive absorption," and "computational thinking" are defined as latent variables and measured through multiple observed indicators. The project plans to collect data through questionnaires, use maximum likelihood estimation (MLE) for parameter estimation, test the goodness of fit of the model (such as CFI, RMSEA, SRMR, etc.), and verify the structural relationships between variables through the analysis of standardized regression coefficients.
+                    The project also conducted reliability and validity tests, including evaluating the reliability of the items through factor loadings and testing the convergent validity of the scale through Composite Reliability (CR) and Average Variance Extracted (AVE), to ensure the reliability and validity of the measurement tool. Through this series of statistical modeling and hypothesis testing processes, the project constructed a theoretically grounded and statistically robust model of factors influencing artificial intelligence literacy, thereby providing scientific support for empirical research and educational intervention.
                 </p>
                 <div class="research-highlights">
-                    <h5>关键成果：</h5>
+                    <h5>Key Achievements:</h5>
                     <ul>
-                        <li>构建人工智能素养影响因素的结构方程模型</li>
-                        <li>进行统计检验</li>
-                        <li>提出针对性政策与建议</li>
-                        <li>开发一个信息素养的影响因素模型的分析系统[2-2]</li>
+                        <li>Constructing the Structural Equation Model of the influencing factors of Artificial Intelligence Literacy</li>
+                        <li>Carry out statistical inspection</li>
+                        <li>Put forward targeted policies and suggestions</li>
+                        <li>Develop an analysis system of influencing factor model of information literacy [2-2]</li>
                     </ul>
                 </div>
                 <div class="research-tags">
-                    <span class="research-tag">人工智能素养</span>
-                    <span class="research-tag">结构方程模型</span>
-                    <span class="research-tag">统计检验</span>
+                    <span class="research-tag">Artificial Intelligence</span>
+                    <span class="research-tag">Structural Equation Model</span>
+                    <span class="research-tag">Statistics</span>
                 </div>
             </div>
         </div>
@@ -92,36 +96,39 @@
 		<div class="research-item">
             <div class="research-date">2024.7 - 2024.10</div>
             <div class="research-content">
-                <h3>基于数字化与乡村振兴视角下鲁垛镇乱针绣非物质文化遗产保护与传承的创新路径研究</h3>
-                <h4>南京农业大学 & 宝应县政府</h4>
-                <p class="research-role">暑期科技文化卫生“三下乡”社会实践（青禾乡村振兴定点实践专项）</p>
-                <p class="research-supervisor">导师：宗何婵瑞(讲师)</p>
+                <h3>Research on the Innovation Path of the Protection and Inheritance of the Intangible Cultural Heritage of Random Needle Embroidery in Luduo Town from the Perspective of Digitization and Rural Revitalization</h3>
+                <h4>Nanjing Agriculture University & Baoying County Government</h4>
+                <p class="research-role">Summer Social Practice Activity for the "Bring Scientific and Literacy Knowledge and Offer Medical Service to Rural Areas" (special project of agricultural university)</p>
+                <p class="research-supervisor">Supervisor: Chanrui Zonghe (Lecturer)</p>
                 <p class="research-description">
-                    带领团队到扬州市宝应县实地调研鲁垛镇乱针绣非物质文化遗产，撰写调研报告以及开发宣传网页，并提出可行性发展建议，得到了宝应县政府的认可。
+                    Through on-site research at the China Random Needle Embroidery Cultural Industrial Park and Zhuping Tang's Master of Skills Studio, we gained a deep understanding of the production process and artistic features of random needle embroidery. With the help of digital media technology, we recorded the creative process and technical details of the embroidery products. The team also had in-depth exchanges with intangible cultural heritage inheritors such as Yuanhua Mo and Yuanguo Mo, discussing how to enhance the dissemination and influence of random needle embroidery through modern technological means.
+                    Based on the first-hand materials collected, the team designed and developed a web-based display platform for Luanzhen embroidery, presenting the historical background, craftsmanship process and cultural connotation of Luanzhen embroidery to the public through multimedia forms such as text, images and videos. This platform not only realizes the digital archiving and display of random needle embroidery works, but also attempts to enhance users' sense of participation and immersion through interactive experiences, promoting the dissemination and regeneration of intangible cultural heritage in the digital space.
+                    In addition, the team also combined their professional data processing and analysis capabilities to conduct a systematic study on the current inheritance status and development path of random needle embroidery, wrote a research report and put forward a series of protection suggestions based on digital technology.
+                    The team also held a non-heritage publicity event for teenagers in Lianhua Community, Anyi Town. By combining digital display with interactive teaching, it aimed to stimulate the younger generation's interest and recognition of random needle embroidery. This activity not only demonstrates the application value of information technology in cultural education, but also showcases its practical potential in rural revitalization and cultural inheritance.
                 </p>
                 <div class="research-highlights">
-                    <h5>关键成果：</h5>
+                    <h5>Key Achievements:</h5>
                     <ul>
-                        <li>撰写调研报告</li>
-                        <li>开发宣传网页</li>
+                        <li>Write research report, the report was rated as an excellent report</li>
+                        <li>Develop publicity website</li>
                     </ul>
                 </div>
                 <div class="research-tags">
-                    <span class="research-tag">网页搭建</span>
-                    <span class="research-tag">非遗传承</span>
-                    <span class="research-tag">社会实践</span>
+                    <span class="research-tag">Web Building</span>
+                    <span class="research-tag">Cultural Inheritance</span>
+                    <span class="research-tag">Social Practice</span>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="publications">
-        <h3>出版物</h3>
+        <h3>Selected Publications</h3>
         
         <!-- Papers Section -->
-        <h4 class="publication-category">论文</h4>
+        <h4 class="publication-category">Papers</h4>
         <div class="publication-list">
-			<div class="publication-item">
+            <div class="publication-item">
                 <div class="pub-number">[1-3]</div>
                 <h4>
                     <a>
@@ -130,22 +137,22 @@
                 </h4>
                 <p><b>Zhaohan Hou</b></p>
                 <p class="journal-name">2025 IEEE 3rd International Conference on Sensors, Electronics and Computer Engineering (ICSECE 2025)</p>
-                <span class="citation-count">EI索引</span>
-				<span class="citation-count">已录用，未发表</span>
+                <span class="citation-count">EI Compendex</span>
+				<span class="citation-count">Accepted, not yet published</span>
             </div>
             <div class="publication-item">
                 <div class="pub-number">[1-2]</div>
                 <h4>
                     <a href="https://doi.org/10.1051/e3sconf/202561801010" 
                     target="_blank" 
-                    title="查看原文"
+                    title="View Original Paper"
                     style="color: #0066cc; text-decoration: none; border-bottom: 1px dashed #0066cc;">
                     Discussion on the Determination Methods for Crack Width Collection Capacity of Highway Pavement
                     </a>
                 </h4>
                 <p>Meixia Wang, Zhenwei Zhang, <b>Zhaohan Hou</b>, Mingyang Jin, Ao Ji</p>
                 <p class="journal-name">2024 6th International Symposium on Architecture Research Frontiers and Ecological Environment (ARFEE 2024)</p>
-                <span class="citation-count">EI索引</span>
+                <span class="citation-count">EI Compendex</span>
             </div>
             <div class="publication-item">
                 <div class="pub-number">[1-1]</div>
@@ -156,35 +163,36 @@
         </div>
 
         <!-- Software Copyright Section -->
-        <h4 class="publication-category">软件著作</h4>
+        <h4 class="publication-category">Software Copyright</h4>
         <div class="publication-list">
             <div class="publication-item">
                 <div class="pub-number">[2-2]</div>
                 <h4>信息素养的影响因素模型分析系统V1.0</h4>
-                <p>登记号: 2025SR0596446</p>
-                <p>授权日期: 2025.04.10</p>
-                <p>著作权人: <b>侯兆晗</b></p>
+                <p>Registration Number: 2025SR0596446</p>
+                <p>Grant Date: 2025.04.10</p>
+                <p>Copyright Owner: <b>侯兆晗</b></p>
             </div>
             <div class="publication-item">
                 <div class="pub-number">[2-1]</div>
                 <h4>智能化数据挖掘与模式识别分析系统V1.0</h4>
-                <p>登记号: 2025SR0336198</p>
-                <p>授权日期: 2025.02.26</p>
-                <p>著作权人: <b>侯兆晗</b></p>
+                <p>Registration Number: 2025SR0336198</p>
+                <p>Grant Date: 2025.02.26</p>
+                <p>Copyright Owner: <b>侯兆晗</b></p>
             </div>
         </div>
 
         <!-- Invention Patent Section -->
-        <h4 class="publication-category">发明专利</h4>
+        <h4 class="publication-category">Invention Patent</h4>
         <div class="publication-list">
             <div class="publication-item">
                 <div class="pub-number">[3-1]</div>
                 <h4>一种橡胶支座</h4>
-                <p>专利号: CN202222757986.X</p>
-                <p>授权日期: 2022.12.30</p>
-                <p>专利权人: 高双全,丁拓,明健松,李朋,王山虎,贺泽震,孙琰,曹铁成,<b>侯兆晗</b></p>
+                <p>Patent Number: CN202222757986.X</p>
+                <p>Grant Date: 2022.12.30</p>
+                <p>Copyright Owner: 高双全,丁拓,明健松,李朋,王山虎,贺泽震,孙琰,曹铁成,<b>侯兆晗</b></p>
             </div>
         </div>
     </div>
-</div>
 
+    <p style="text-align: center; font-size: 0.9rem; color: #914ae2; margin-top: 2rem;">The above Chinese characters are the original ones used at the time of publication</p>
+</div>

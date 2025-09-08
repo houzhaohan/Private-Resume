@@ -1,15 +1,15 @@
-// Navigation and content loading functionality
+// 导航和内容加载
 document.addEventListener("DOMContentLoaded", () => {
-  // Handle navigation
+  // 处理导航点击
   setupNavigation()
 
-  // Initialize skill bars animation
+  // 初始化技能条
   initializeSkillBars()
 
-  // Load initial content
+  // 加载初始内容
   loadContent('profile')
 
-  // Setup mobile menu
+  // 设置菜单
   setupMobileMenu()
 })
 
@@ -75,7 +75,7 @@ function loadContent(section) {
     const contentDiv = document.getElementById(`${section}-content`);
     const lang = currentLang;
     
-    // 根据当前语言加载对应的 HTML 文件
+    // 根据当前语言加载对应的HTML文件
     fetch(`${section}${lang === 'zh' ? '_zh' : ''}.html`)
         .then(response => response.text())
         .then(html => {
@@ -122,14 +122,14 @@ function setupNavigation() {
     link.addEventListener("click", function (e) {
       e.preventDefault()
 
-      // Remove active class from all links and sections
+      // 移除所有active类
       navLinks.forEach((l) => l.classList.remove("active"))
       sections.forEach((s) => s.classList.remove("active"))
 
-      // Add active class to clicked link
+      // 添加当前active类
       this.classList.add("active")
 
-      // Show corresponding section
+      // 展示对应的部分
       const targetId = this.getAttribute("href").substring(1)
       const targetSection = document.getElementById(targetId)
       if (targetSection) {
@@ -138,7 +138,7 @@ function setupNavigation() {
         // 立即加载对应语言的内容
         loadContent(targetId)
 
-        // Re-initialize skill bars if skills section is shown
+        // 如果是技能部分，重新初始化技能条动画
         if (targetId === "skills") {
           setTimeout(initializeSkillBars, 100)
         }
@@ -160,7 +160,7 @@ function initializeSkillBars() {
   })
 }
 
-// Smooth scrolling for better UX
+// 平滑滚动到目标元素
 function smoothScroll(target) {
   const element = document.getElementById(target)
   if (element) {
@@ -171,9 +171,9 @@ function smoothScroll(target) {
   }
 }
 
-// Add some interactive features
+// 添加交互效果
 document.addEventListener("DOMContentLoaded", () => {
-  // Add hover effects to skill items
+  // 添加悬停效果到技能项
   const skillItems = document.querySelectorAll(".skill-item")
   skillItems.forEach((item) => {
     item.addEventListener("mouseenter", function () {
@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Add click effects to contact items
+  // 添加点击效果到联系方式
   const contactItems = document.querySelectorAll(".contact-item")
   contactItems.forEach((item) => {
     item.addEventListener("click", function () {
